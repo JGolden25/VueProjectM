@@ -134,4 +134,29 @@ export default {
     
   }
 
+  section {
+      @include flexbox();
+      flex-direction: column;
+      width: 100%;
+      background-color: #fff;
+    
+      h2 {
+        font-size: 1.6rem;
+        color: #DF5C2E;
+        margin: 0;
+        padding: 20px;
+      }
+       .input-fields {
+        @include flexbox();
+        flex-direction: column;
+        width: 100%;
+      }
+      .input-container {
+        position: relative;
+        padding: 30px 20px 20px 20px;
+        width: calc(100% - 40px);
+        max-width: 400px;
+      }
+  }
+
 </style>
