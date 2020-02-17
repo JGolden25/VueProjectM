@@ -86,6 +86,7 @@ checkFields() {
             field.valid = true;
           }
         });
+
         if(valid) {
           this.nextStep();
         }
@@ -125,6 +126,7 @@ checkFields() {
     max-width: 720px;
     min-height: 480px;
     perspective: 1000px;
+    
     header {
       @include flexbox();
       width: 60px;
@@ -132,7 +134,7 @@ checkFields() {
       background-color: #fff;
       border-right: 2px dotted #DF5C2E;
     }
-  }
+  
 
   .progress-step {
       @include flexbox();
@@ -144,16 +146,20 @@ checkFields() {
       color: #fff;
       background-color: #DF5C2E;
       font-weight: bold;
+
       &.active {
         background-color: #DF5C2E;
+
         ~ .progress-step {
           color: #555;
           background-color: #ccc;
         }
+
         ~ .progress-step::before {
           background-color: #ccc;
         }
       }
+      
       &:before {
         content: '';
         position: absolute;
@@ -191,7 +197,7 @@ checkFields() {
         padding: 30px 20px 20px 20px;
         width: calc(100% - 40px);
         max-width: 400px;
-      }
+      
       input {
           position: relative;
           width: 100%;
@@ -200,7 +206,7 @@ checkFields() {
           outline: none;
           background: transparent;
           border-bottom: 2px dashed #DF5C2E;
-      }
+      
       &:valid + .input-label {
             top: 10px;
             left: 20px;
@@ -208,6 +214,12 @@ checkFields() {
             font-weight: normal;
             color: #999;
           }
+          &.wrong-input + .input-label {
+            color: #B92938;
+          }
+  }
+  }
+      
       .input-label {
         position: absolute;
         top: 32px;
@@ -216,8 +228,11 @@ checkFields() {
         pointer-events: none;
         transition: .2s ease-in-out;
       }
+      
+
       .actions {
         margin: 0;
+
         button {
           font-family: 'Noto Sans', sans-serif;
           outline: none;
@@ -231,6 +246,7 @@ checkFields() {
           cursor: pointer;
         }
       }
+  }
   }
   
   .animate-in {
