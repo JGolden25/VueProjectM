@@ -208,6 +208,11 @@ checkFields() {
             font-weight: normal;
             color: #999;
           }
+          &.wrong-input + .input-label {
+            color: #B92938;
+          }
+        
+      
       .input-label {
         position: absolute;
         top: 32px;
@@ -216,6 +221,8 @@ checkFields() {
         pointer-events: none;
         transition: .2s ease-in-out;
       }
+      
+
       .actions {
         margin: 0;
         button {
