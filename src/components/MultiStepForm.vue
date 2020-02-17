@@ -55,21 +55,37 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
    @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
    
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+   @mixin flexbox() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    @include flexbox();
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Noto Sans', sans-serif;
+    background: #DF5C2E
+  }
+
+  article {
+    display: flex;
+    margin: 10px;
+    width: calc(100% - 20px);
+    max-width: 720px;
+    min-height: 480px;
+    perspective: 1000px;
+    header {
+      @include flexbox();
+      width: 60px;
+      height: 480px;
+      background-color: #fff;
+      border-right: 2px dotted #DF5C2E;
+    }
+  }
+
 </style>
