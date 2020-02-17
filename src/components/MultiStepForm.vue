@@ -88,4 +88,35 @@ export default {
     }
   }
 
+  .progress-step {
+      @include flexbox();
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      color: #fff;
+      background-color: #DF5C2E;
+      font-weight: bold;
+      &.active {
+        background-color: #DF5C2E;
+        ~ .progress-step {
+          color: #555;
+          background-color: #ccc;
+        }
+        ~ .progress-step::before {
+          background-color: #ccc;
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        width: 2px;
+        height: 20px;
+        background-color: #DF5C2E;
+        z-index: 10;
+      }
+  }
+
 </style>
