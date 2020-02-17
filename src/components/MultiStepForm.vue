@@ -17,10 +17,40 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  data: () => {
+      return {
+
+        formSteps: [
+          {
+            title: "HTML Quiz",
+            fields: [
+              { label: "What does HTML stand for?", value: '', valid: true, pattern: /.+/ },
+              { label: "Is HTML technically a programming language?", value: '', valid: true, pattern: /.+/ },
+              { label: "Element for the largest heading?", value: '', valid: true, pattern: /.+/ }
+            ]
+          },
+          {
+            title: "CSS Quiz",
+            fields: [
+              { label: "What does CSS stand for?", value: '', valid: true, pattern: /.+/ },
+              { label: "Is CSS technically a programming language?", value: '', valid: true, pattern: /.+/ },
+              { label: "Property for the background color?", value: '', valid: true, pattern: /.+/ }
+            ]
+          },
+          {
+            title: "Your data",
+            fields: [
+              { label: "Your first name?", value: '', valid: true, pattern: /.+/ },
+              { label: "Your last name?", value: '', valid: true, pattern: /.+/ },
+              { label: "Your email?", value: '', valid: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ }
+            ]
+          },
+          {
+            title: "Thank you for participating!",
+          }
+        ],
+      }
+    },
 }
 </script>
 
