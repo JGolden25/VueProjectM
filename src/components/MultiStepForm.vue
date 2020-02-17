@@ -35,6 +35,7 @@ export default {
   data: () => {
       return {
         activeStep: 0,
+        animation: 'animate-in',
         formSteps: [
           {
             title: "HTML Quiz",
@@ -200,6 +201,28 @@ export default {
           cursor: pointer;
         }
       }
+  }
+  
+  .animate-in {
+    transform-origin: left;
+    animation: in .6s ease-in-out;
+  }
+  .animate-out {
+    transform-origin: bottom left;
+    animation: out .6s ease-in-out;
+  }
+  .animate-wrong {
+    animation: wrong .4s ease-in-out;
+  }
+  @keyframes in {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
   }
 
 </style>
