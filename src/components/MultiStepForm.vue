@@ -21,6 +21,10 @@
             <label class="input-label">{{ field.label }}</label>
           </div>
         </div>
+        <div class="actions">
+          <button v-if="activeStep +1 < formSteps.length -1" @click="checkFields">next</button>
+          <button v-if="activeStep +1 === formSteps.length -1" @click="checkFields">done</button>
+        </div>
       </section>
     </article>
   </div>
@@ -156,6 +160,45 @@ export default {
         padding: 30px 20px 20px 20px;
         width: calc(100% - 40px);
         max-width: 400px;
+      }
+      input {
+          position: relative;
+          width: 100%;
+          font-family: 'Noto Sans', sans-serif;
+          font-size: 1.35rem;
+          outline: none;
+          background: transparent;
+          border-bottom: 2px dashed #DF5C2E;
+      }
+      &:valid + .input-label {
+            top: 10px;
+            left: 20px;
+            font-size: .7rem;
+            font-weight: normal;
+            color: #999;
+          }
+      .input-label {
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        font-size: 1.35rem;
+        pointer-events: none;
+        transition: .2s ease-in-out;
+      }
+      .actions {
+        margin: 0;
+        button {
+          font-family: 'Noto Sans', sans-serif;
+          outline: none;
+          border: none;
+          color: #fff;
+          background-color: rgb(46, 197, 223);
+          font-size: 1.35rem;
+          padding: 5px 20px;
+          margin: 0;
+          border-radius: 3px;
+          cursor: pointer;
+        }
       }
   }
 
