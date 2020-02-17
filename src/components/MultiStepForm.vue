@@ -67,7 +67,37 @@ export default {
         ],
       }
     },
-}
+     methods: {
+      nextStep() {
+        this.animation = 'animate-out';
+        setTimeout(() => {
+          this.animation = 'animate-in';
+          this.activeStep += 1;
+        }, 550);
+},
+checkFields() {
+        let valid = true;
+        this.formSteps[this.activeStep].fields.forEach(field => {
+          if(!field.pattern.test(field.value)) {
+            valid = false;
+            field.valid = false;
+          }
+          else {
+            field.valid = true;
+          }
+        });
+        if(valid) {
+          this.nextStep();
+        }
+        else {
+          this.animation = 'animate-wrong';
+          setTimeout(() => {
+            this.animation = '';
+          }, 400);
+        }
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
