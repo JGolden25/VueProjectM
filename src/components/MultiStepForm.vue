@@ -11,6 +11,17 @@
           </div>
         </div>
       </header>
+      <section :class="animation">
+        <h2>{{ formSteps[activeStep].title }}</h2>
+        <div class="input-fields">
+          <div class="input-container"
+          v-for="(field, index) in formSteps[activeStep].fields"
+          :key="'field'+index">
+            <input type="text" :class="{'wrong-input': !field.valid}" v-model="field.value" required>
+            <label class="input-label">{{ field.label }}</label>
+          </div>
+        </div>
+      </section>
     </article>
   </div>
 </template>
@@ -117,6 +128,10 @@ export default {
         background-color: #DF5C2E;
         z-index: 10;
       }
+      &:first-child::before {
+        display: none;
+      }
+    
   }
 
 </style>
