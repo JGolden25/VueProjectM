@@ -19,7 +19,7 @@
 export default {
   data: () => {
       return {
-
+        activeStep: 0,
         formSteps: [
           {
             title: "HTML Quiz",
@@ -55,7 +55,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+   @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+   
 h3 {
   margin: 40px 0 0;
 }
